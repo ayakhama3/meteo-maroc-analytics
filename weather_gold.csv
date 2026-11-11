@@ -1,0 +1,5 @@
+city,country,latitude,longitude,temperature,temp_min,temp_max,feels_like,humidity,pressure,weather_main,weather_description,wind_speed,wind_deg,event_timestamp,ingestion_timestamp,weather_score,recommendation,rank,date
+Mogador,MA,31.5125,-9.77,27.72,27.72,27.72,28.14,50,1017,Clouds,few clouds,3.09,250,2026-05-24 09:16:43,2026-11-05 15:16:41,80,Excellent,1,2026-11-05
+Tangier,MA,35.7806,-5.8137,25.64,25.64,25.64,25.2,36,1021,Clear,clear sky,11.83,70,2026-05-24 09:13:35,2026-11-05 15:16:41,80,Excellent,2,2026-11-05
+Marrakesh,MA,31.6315,-8.0083,33.04,33.04,33.04,31.65,27,1018,Clouds,scattered clouds,1.54,80,2026-05-24 09:17:03,2026-11-05 15:16:41,60,Bien,3,2026-11-05
+Dakhla,EH,23.6848,-15.958,19.01,19.01,19.01,19.26,88,1016,Clouds,overcast clouds,9.77,40,2026-05-24 09:17:12,2026-11-05 15:16:41,25,Déconseillé,4,2026-11-05

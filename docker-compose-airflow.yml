@@ -1,0 +1,22 @@
+services:
+  airflow:
+    image: apache/airflow:2.8.0
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - _AIRFLOW_DB_MIGRATE=true
+      - _AIRFLOW_WWW_USER_CREATE=true
+      - _AIRFLOW_WWW_USER_USERNAME=${AIRFLOW_ADMIN_USERNAME:-admin}
+      - _AIRFLOW_WWW_USER_PASSWORD=${AIRFLOW_ADMIN_PASSWORD:?Set AIRFLOW_ADMIN_PASSWORD in .env}
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY:-}
+      - MINIO_ENDPOINT_URL=http://host.docker.internal:9000
+      - MINIO_ACCESS_KEY=${MINIO_ACCESS_KEY:-minioadmin}
+      - MINIO_SECRET_KEY=${MINIO_SECRET_KEY:-minioadmin}
+      - _PIP_ADDITIONAL_REQUIREMENTS=requests boto3 pandas python-dotenv
+    volumes:
+      - C:\projet-data\dags:/opt/airflow/dags
+      - C:\projet-data:/opt/airflow/scripts
+    ports:
+      - "8081:8080"
+    command: standalone

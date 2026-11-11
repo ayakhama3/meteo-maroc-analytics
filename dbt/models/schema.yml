@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_weather
+    description: "Observations météo nettoyées et typées depuis l'export Silver."
+    columns:
+      - name: city
+        tests:
+          - not_null
+      - name: event_timestamp
+        tests:
+          - not_null
+  - name: mart_city_weather
+    description: "Score de confort et classement quotidien des villes."
+    columns:
+      - name: weather_score
+        tests:
+          - not_null
+      - name: daily_rank
+        tests:
+          - not_null
+      - name: recommendation
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Excellent", "Bien", "Moyen", "Déconseillé"]

@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+weather_analytics.duckdb*
+weather_forecast.csv
+dbt/logs/
+dbt/target/
+dbt/.user.yml
+/airbyte/
+/minio-data/
+/mc.exe
